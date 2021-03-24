@@ -30,7 +30,7 @@ import { bindActionCreators } from "redux";
                 </thead>
                 <tbody>
                     {
-                      Surveys.map((survey, index)=>(
+                      surveys.map(({title}, index)=>(
                         <tr key={index}>
                         <th scope="row">{index + 1}</th>
                         <td>{title}</td>
