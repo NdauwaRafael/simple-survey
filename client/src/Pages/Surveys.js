@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 export default class Surveys extends Component {
   constructor(props){
-
+      super(props)
   }
 
   render(){
     return(
         <div className="hello">
+              <div className="mb-5">
+                <button type="button" className="btn btn-primary">Add Survey</button>
+              </div>
+
               <table className="table">
                 <thead>
                   <tr>
