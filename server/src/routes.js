@@ -4,6 +4,7 @@ const config = require('./config');
 const userRoutes = require('./modules/user/user.routes');
 const authRoutes = require('./modules/auth/auth.routes');
 const bookRoutes = require('./modules/book/book.routes');
+const surveyRoutes = require('./modules/survey/survey.routes');
 
 const router = express.Router();
 
@@ -34,5 +35,8 @@ router.use('/users', userRoutes);
 
 // mount book routes at /books
 router.use('/books', bookRoutes);
+
+// mount survey routes at /surveys
+router.use('/surveys', surveyRoutes)
 
 module.exports = router;

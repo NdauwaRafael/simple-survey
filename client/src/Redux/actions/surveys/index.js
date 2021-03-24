@@ -28,3 +28,9 @@ import {
             return dispatch(loadSurveysFailed("Failed to load surveys!"))
         })
 };
+
+
+export const createSurvey = () => (dispatch, getState) => {
+
+}
+

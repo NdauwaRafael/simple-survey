@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-export default class Surveys extends Component {
+import {getSurveys} from "../Redux/actions/surveys"
+ class Surveys extends Component {
   constructor(props){
       super(props)
+  }
+
+  componentDidMount(){
+    this.props.loadSurveys();
   }
 
   render(){
@@ -33,3 +38,16 @@ export default class Surveys extends Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadSurveys: bindActionCreators(getSurveys, dispatch)
+  };
+};
+const mapStateToProps = ({ surveys: { surveys } }) => {
+  return {
+    surveys
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Surveys)
