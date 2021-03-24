@@ -21,10 +21,10 @@ router.route('/')
   .post(validate(paramValidation.createSurvey), surveyCtrl.create);
 
  /** UPDATE /api/surveys/:surveyId/complete - Mark survey as complete */
-router.route('/:surveyId/complete')
-  .update(surveyCtrl.markComplete);
+// router.route('/:surveyId/complete')
+//   .put(surveyCtrl.markComplete);
 
   /** Load survey when API with surveyId route parameter is hit */
-router.param('surveyId', surveyCtrl.load);
+// router.param('surveyId', surveyCtrl.load);
 
 module.exports = router;

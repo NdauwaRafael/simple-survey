@@ -16,7 +16,7 @@ const Survey = require('./survey.model');
  * Get Survey
  * @returns {Survey}
  */
-function get(req, res) {
+async function get(req, res) {
   try {
     const survey = await Survey.get(id);
     return res.json(survey);
@@ -78,5 +78,6 @@ function markComplete(req, res, next){
 module.exports = {
   get,
   list,
-  create
+  create,
+  markComplete
 };
