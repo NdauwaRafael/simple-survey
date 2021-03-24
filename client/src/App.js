@@ -1,5 +1,5 @@
 import Login from "./Pages/Login";
-import "./styles.css";
+import "./assets/sass/main.scss";
 
 export default function App() {
   return (

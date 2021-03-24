@@ -65,8 +65,8 @@ class Login extends Component {
     if (!this.isFormValid()) {
       return;
     }
-    const { username, password } = this.state;
-    this.props.loginUser(username, password);
+    const { email, password } = this.state;
+    this.props.loginUser(email, password);
   }
 
   render() {

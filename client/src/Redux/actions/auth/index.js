@@ -20,14 +20,16 @@ export const loginFailed = (resp) => {
   };
 };
 
-export const loginUser = (username, password) => (dispatch) => {
+export const loginUser = (email, password) => (dispatch) => {
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
     }
   };
 
-  let body = JSON.stringify({ username, password });
+  let body = JSON.stringify({ email, password });
   authApi
     .loginUserApi(body, config)
     .then((resp) => {
