@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const httpStatus = require('http-status');
-const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const APIError = require('../../helpers/APIError');
 
@@ -16,6 +15,10 @@ const SurveySchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
+  },
+  complete: {
+    type: Boolean,
+    default: false
   },
   createdAt: {
     type: Date,

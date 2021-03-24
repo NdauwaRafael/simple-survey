@@ -4,9 +4,12 @@ import { Route, Switch } from 'react-router-dom';
 import Login from '../Pages/Login';
 import Surveys from '../Pages/Surveys';
 
+//PRIVATE ROUTE
+import PrivateRoute from './PrivateRoute';
+
 export default (
     <Switch>
         <Route path="/login" exact component={Login} />
-        <Route path="/" exact component={Surveys} />
+        <PrivateRoute path="/" exact component={Surveys} />
     </Switch>
 );

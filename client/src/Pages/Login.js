@@ -73,7 +73,8 @@ class Login extends Component {
     const { email, password, errors } = this.state;
 
     return (
-      <div className="card">
+      <div className="justify-content-center row">
+      <div className="card col-6">
         <div className="card-body">
           <TextInput
             error={errors.email}
@@ -101,8 +102,17 @@ class Login extends Component {
             >
               Login
             </button>
+
+            <a href="https://realfield.io/register"
+              target="_blank"
+              type="button"
+              className="btn btn-secondary ml-3"
+            >
+              Create Account
+            </a>
           </div>
         </div>
+      </div>
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {createSurvey} from "../Redux/actions/surveys";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
  class AddSurvey extends Component {
   constructor(props){

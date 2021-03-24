@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import {getSurveys} from "../Redux/actions/surveys"
+import {getSurveys} from "../Redux/actions/surveys";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
  class Surveys extends Component {
   constructor(props){
       super(props)
@@ -10,6 +13,7 @@ import {getSurveys} from "../Redux/actions/surveys"
   }
 
   render(){
+    const {surveys} = this.props;
     return(
         <div className="hello">
               <div className="mb-5">
@@ -21,17 +25,19 @@ import {getSurveys} from "../Redux/actions/surveys"
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Author</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
+                    {
+                      Surveys.map((survey, index)=>(
+                        <tr key={index}>
+                        <th scope="row">{index + 1}</th>
+                        <td>{title}</td>
+                        <td><button type="button" class="btn btn-link">View</button></td>
+                      </tr>
+                      ))
+                    }
                 </tbody>
               </table>
         </div>

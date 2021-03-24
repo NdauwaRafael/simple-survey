@@ -1,6 +1,18 @@
 const Survey = require('./survey.model');
 
 /**
+ * Load survey and append to req.
+ */
+ function load(req, res, next, id) {
+  Survey.get(id)
+    .then((survey) => {
+      req.survey = survey;
+      return next();
+    })
+    .catch((e) => next(e));
+}
+
+/**
  * Get Survey
  * @returns {Survey}
  */
@@ -50,6 +62,18 @@ async function list(req, res, next) {
     .catch((e) => next(e));
 }
 
+/**
+ * Mark complete Survey
+ * @returns {Survey}
+ */
+function markComplete(req, res, next){
+  const { survey } = req;
+  survey.complete = true;
+  survey.save()
+  .then((savedSurvey) => res.json(savedSurvey))
+  .catch((e) => next(new APIError(e.message, httpStatus.CONFLICT)));
+
+}
 
 module.exports = {
   get,
